@@ -1,0 +1,20 @@
+{
+    "name": "tsdocexperiment",
+    "version": "1.0.0",
+    "devDependencies": {
+        "@microsoft/api-documenter": "^7.5.1",
+        "@microsoft/api-extractor": "^7.5.1",
+        "@microsoft/tsdoc": "^0.12.14",
+        "@types/node": "^12.11.1",
+        "fs": "0.0.1-security"
+    },
+    "scripts": {
+        "compile-scripts": "npx tsc --outDir genscripts scripts/*.ts",
+        "compile": "rm -rf lib && npx tsc && npm run-script compile-scripts && node genscripts/copy_definition_files.js",
+        "tsdoc-parser": "npm run-script compile-scripts && node genscripts/parse_tsdoc.js",
+        "apiextractor": "npm run-script compile-scripts && npm run-script compile && node genscripts/api_extractor_experiment.js"
+    },
+    "dependencies": {
+        "typescript": "^3.6.4"
+    }
+}
