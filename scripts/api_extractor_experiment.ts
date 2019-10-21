@@ -1,12 +1,7 @@
-import {
-    Extractor,
-    ExtractorConfig,
-    ExtractorResult,
-    CompilerState
-} from '@microsoft/api-extractor';
+import {Extractor, ExtractorConfig, ExtractorResult} from '@microsoft/api-extractor';
 import * as path from 'path';
 import * as fs from 'fs';
-import { JsonFile } from '@microsoft/node-core-library';
+import {JsonFile} from '@microsoft/node-core-library';
 
 const definitionFiles: string[] = [];
 collectDefinitionFiles("lib", "", definitionFiles);
